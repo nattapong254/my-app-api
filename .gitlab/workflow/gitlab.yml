@@ -1,0 +1,25 @@
+name: Deploy My App to GitHub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: checkout Code
+        uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm install
+      - name: build
+        run: npm start
+      - name: deploy to gh pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./tryapi
