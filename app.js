@@ -9,9 +9,9 @@ var { client } = require('./metrics');
 
 var mongoose = require('mongoose');
 //var MONGO_URI = process.env.MONGO_URI || 'mongodb://admin:1234@127.0.0.1:27017/mydb';
-mongoose.connect('mongodb://admin:1234@172.24.98.167:27017/mydb')
-.then(() => console.log('connected'))
-.catch(err => console.error(err));
+//mongoose.connect('mongodb://admin:1234@172.24.98.167:27017/mydb')
+//.then(() => console.log('connected'))
+//.catch(err => console.error(err));
 
 var allRouter = require('./routes/alluser');
 var indexRouter = require('./routes/index');
